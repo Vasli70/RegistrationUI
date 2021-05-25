@@ -11,8 +11,7 @@
                                     <input type="text" class="search-query form-control" placeholder="Search With ID"  name="id" [(ngModel)]="id"/>
                                     <span class="input-group-btn">
                                         <button class="btn btn-danger" type="button" (click)="findUserById(id)">
-                                            <span class=" glyphicon glyphicon-search"></span>
-                                            
+                                            <span class=" glyphicon glyphicon-search"></span>                                            
                                         </button>
                                     </span>
                                 </div>
@@ -20,7 +19,16 @@
     </div>
     </div>
 
-<div class="container">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<form class="example" action="action_page.php">
+  <input type="text" placeholder="Id Search.."  name="id" [(ngModel)]="id">
+  <button type="submit" (click)="findUserById(user.id)"><i class="fa fa-search"></i></button>
+  
+</form>
+
+
+
+
 <div class="container">
     <div class="row col-md-6 col-md-offset-2 custyle">
     <table class="table table-striped custab">
@@ -47,6 +55,8 @@
     </table>
     </div>
 </div>
+
+
 
 <div>
     <nav class="navbar navbar-expand-sm bg-light">
