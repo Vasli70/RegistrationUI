@@ -6,27 +6,29 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserRegistationService {
 
+   ROOT_URL:String='http://userservice-env.eba-npdjp5cm.us-east-1.elasticbeanstalk.com/';
+
   constructor(private http:HttpClient) { }
 
 
   public doRegistration(user){
-    return this.http.post("http://localhost:9191/Register",user,{responseType:'text' as 'json'});
+    return this.http.post( this.ROOT_URL + "/Register",user,{responseType:'text' as 'json'});
   }
 
   public getUsers(){
-    return this.http.get("http://localhost:9191/getallusers");
+    return this.http.get(this.ROOT_URL + "/getallusers");
   }
 
   public findUserById(id){
-    return this.http.get("http://localhost:9191/getuser/"+id);
+    return this.http.get(this.ROOT_URL + "/getuser/"+id);
   }
 
   public deleteUser(id){
-    return this.http.delete("http://localhost:9191/deleteuser/"+id);
+    return this.http.delete(this.ROOT_URL +  "/deleteuser/"+id);
   }
 
   public getUserbymail(email){
-    return this.http.delete("http://localhost:9191/getuserbyemail"+email);
+    return this.http.delete(this.ROOT_URL +  "/getuserbyemail"+email);
   }
 
 

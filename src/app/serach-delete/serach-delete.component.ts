@@ -25,8 +25,8 @@ public findUserById(id){
   resp.subscribe((data)=>this.users=data);
  }
 
- public findUserByemail(){
-  let resp= this.service.getUserbymail(this.email);
+ public findUserByemail(email){
+  let resp= this.service.getUserbymail(email);
   resp.subscribe((data)=>this.users=data);
  }
 
